@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using AutoService.Pages;
 
 namespace AutoService
 {
@@ -27,7 +16,43 @@ namespace AutoService
 
         private void ServicesButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new ServicePage());
         }
+
+        private void RequestOfService_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new RequestForServicePage());
+        }
+
+        private void ProductsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ProductsPage());
+        }
+
+        private void ClientsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ClientsPage());
+        }
+
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AddProductPage());
+        }
+
+        private void AddClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AddClientPage());
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();    
+        }
+
     }
 }

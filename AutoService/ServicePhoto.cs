@@ -17,7 +17,5 @@ namespace AutoService
         public int ID { get; set; }
         public int ServiceID { get; set; }
         public string PhotoPath { get; set; }
-    
-        public virtual Service Service { get; set; }
     }
 }

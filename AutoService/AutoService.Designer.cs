@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Xeon\source\repos\AutoService\AutoService\AutoserviceModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Xeon\source\repos\AutoService\AutoService\AutoService.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

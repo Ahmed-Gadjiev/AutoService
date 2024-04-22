@@ -65,44 +65,66 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AutoserviceModel.cs">
+    <Compile Include="DB.cs" />
+    <Compile Include="Pages\AddClientPage.xaml.cs">
+      <DependentUpon>AddClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddProductPage.xaml.cs">
+      <DependentUpon>AddProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoService.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoService.edmx</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientService.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB.cs" />
+    <Compile Include="Pages\ClientsPage.xaml.cs">
+      <DependentUpon>ClientsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DocumentByService.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="Manufacturer.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPhoto.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestForServicePage.xaml.cs">
+      <DependentUpon>RequestForServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+      <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServicePhoto.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tag.cs">
-      <DependentUpon>AutoserviceModel.tt</DependentUpon>
+    <Compile Include="Pages\ServicePage.xaml.cs">
+      <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionary.xaml">
       <SubType>Designer</SubType>
@@ -116,22 +138,45 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AutoserviceModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoserviceModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AutoserviceModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoserviceModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClientsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RequestForServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>AutoService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>AutoService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>AutoService.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,14 +194,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AutoserviceModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutoserviceModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="AutoserviceModel.edmx.diagram">
-      <DependentUpon>AutoserviceModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="AutoService.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AutoService.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AutoService.edmx.diagram">
+      <DependentUpon>AutoService.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,19 +214,19 @@
     <Resource Include="Resources\service_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoserviceModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoserviceModel.Context.cs</LastGenOutput>
-      <DependentUpon>AutoserviceModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="AutoserviceModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoserviceModel.edmx</DependentUpon>
-      <LastGenOutput>AutoserviceModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="AutoService.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoService.edmx</DependentUpon>
+      <LastGenOutput>AutoService.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AutoService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoService.edmx</DependentUpon>
+      <LastGenOutput>AutoService.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

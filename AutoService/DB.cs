@@ -8,7 +8,7 @@ namespace AutoService
 {
     internal class DB
     {
-        public static AutoServiceEntities Connection = new AutoServiceEntities();
+        public static AutoServiceEntities1 Connection = new AutoServiceEntities1();
     }
 
 

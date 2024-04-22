@@ -13,20 +13,11 @@ namespace AutoService
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AutoServiceEntities : DbContext
+    public partial class AutoServiceEntities1 : DbContext
     {
-        private static AutoServiceEntities _context;
-
-        public AutoServiceEntities()
-            : base("name=AutoServiceEntities")
+        public AutoServiceEntities1()
+            : base("name=AutoServiceEntities1")
         {
-        }
-
-        public static AutoServiceEntities GetContext()
-        {
-            if (_context == null)
-                _context = new AutoServiceEntities();
-            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -44,6 +35,7 @@ namespace AutoService
         public virtual DbSet<ProductSale> ProductSale { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<ServicePhoto> ServicePhoto { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
     }
 }
