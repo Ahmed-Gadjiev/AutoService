@@ -1,4 +1,4 @@
-﻿<Page x:Class="AutoService.Pages.ProductsPage"
+﻿<Page x:Class="AutoService.Pages.RequestsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AutoService.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductsPage">
+      Title="Requests">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,19 +15,21 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Label>Сортировка по: </Label>
-            <RadioButton Click="SortBook_Click" GroupName="SortBook" Name="cost" Content="цене"></RadioButton>
-            <RadioButton Click="SortBook_Click" GroupName="SortBook" Name="title" Content="названию"></RadioButton>
+            <Label VerticalAlignment="Center">Сортировка по:</Label>
+            <RadioButton Click="SortRequests_Click" GroupName="SortBook" Name="clients" Content="Клиентам" VerticalAlignment="Center" Padding="0,0,5,0" />
+            <RadioButton Click="SortRequests_Click" GroupName="SortBook" Name="services" Content="Услугам" VerticalAlignment="Center" />
         </StackPanel>
+        <Button x:Name="AddButton" Click="AddButton_Click" HorizontalAlignment="Right"  Width="155" >Новая заявка</Button>
 
-        <DataGrid Name="ProductGrid" Grid.Row="1" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False">
+
+        <DataGrid Name="RequestGrid" Grid.Row="1" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Название" Binding="{Binding Title}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Производитель" Binding="{Binding Manufacturer}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client}" />
+                <DataGridTextColumn Header="Услуга" Binding="{Binding Service}" />
+                <DataGridTextColumn Header="Дата начала" Binding="{Binding StartTime}" />
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Comment}" />
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>

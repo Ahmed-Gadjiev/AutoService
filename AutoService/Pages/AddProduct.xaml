@@ -18,7 +18,7 @@
                 <Label>Описание</Label>
                 <TextBox Text="{Binding product.Description}"></TextBox>
                 <Label>Производитель</Label>
-                <TextBox Text="{Binding product.ManufacturerID}"></TextBox>
+                <ComboBox Name="ManufacturerComboBox" IsEditable="True" SelectedValue="{Binding product.Manufacturer}"></ComboBox>
 
                 <Button Name="SaveButton" Click="SaveButton_Click">Сохранить</Button>
             </StackPanel>

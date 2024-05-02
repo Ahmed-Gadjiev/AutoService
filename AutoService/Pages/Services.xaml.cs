@@ -20,44 +20,56 @@ namespace AutoService.Pages
     /// </summary>
     public partial class ServicePage : Page
     {
-        public List<Service> services { get; set; }
-
         public ServicePage()
         {
             InitializeComponent();
-            services = DB.Connection.Service.ToList();
-            ServiceGrid.ItemsSource = services;
+            ServiceGrid.ItemsSource = DB.Connection.Service.ToList();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             var b = ServiceGrid.SelectedItem as Service;
-            NavigationService.Navigate(new RequestForServicePage(b));
+            NavigationService.Navigate(new AddService(b));
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var b = ServiceGrid.SelectedItem as Service;
+            try
+            {
+                var result = MessageBox.Show("Вы действительно хотите удалить данные", "Внимание!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    var b = ServiceGrid.SelectedItem as Service;
+                    DB.Connection.Service.Remove(b);
+                    DB.Connection.SaveChanges();
+                    ServiceGrid.ItemsSource = DB.Connection.Service.ToList(); 
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка удаления из базы данных");
+            }
+        } 
 
-            DB.Connection.Service.Remove(b);
-            DB.Connection.SaveChanges();
-            services.Remove(b);
-
-            ServiceGrid.ItemsSource = services;
-        }
-
-        private void SortBook_Click(object sender, RoutedEventArgs e)
+        private void SortServices_Click(object sender, RoutedEventArgs e)
         {
             var _sort_type = (sender as RadioButton).Name;
+            var services = DB.Connection.Service.ToList();
 
             if (_sort_type == "cost")
             {
                 ServiceGrid.ItemsSource = services.OrderBy(p => p.Cost);
             }
-            else
+            else 
             {
                 ServiceGrid.ItemsSource = services.OrderBy(p => p.Title);
             }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddService());
+
         }
     }
 }

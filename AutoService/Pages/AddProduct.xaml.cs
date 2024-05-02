@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Data.Entity.Migrations;
+using System.Linq;
 
 namespace AutoService.Pages
 {
@@ -17,6 +18,8 @@ namespace AutoService.Pages
             InitializeComponent();
 
             this.product = product;
+            ManufacturerComboBox.ItemsSource = DB.Connection.Manufacturer.ToList();
+
             DataContext = this;
         }
 
@@ -28,6 +31,7 @@ namespace AutoService.Pages
             {
                 IsActive = true
             };
+            ManufacturerComboBox.ItemsSource = DB.Connection.Manufacturer.ToList();
 
             DataContext = this;
         }

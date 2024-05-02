@@ -66,11 +66,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DB.cs" />
-    <Compile Include="Pages\AddClientPage.xaml.cs">
-      <DependentUpon>AddClientPage.xaml</DependentUpon>
+    <Compile Include="Pages\AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AddProductPage.xaml.cs">
-      <DependentUpon>AddProductPage.xaml</DependentUpon>
+    <Compile Include="Pages\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoService.Context.cs">
       <AutoGen>True</AutoGen>
@@ -93,8 +93,11 @@
     <Compile Include="ClientService.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ClientsPage.xaml.cs">
-      <DependentUpon>ClientsPage.xaml</DependentUpon>
+    <Compile Include="Pages\AddRequest.xaml.cs">
+      <DependentUpon>AddRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Clients.xaml.cs">
+      <DependentUpon>Clients.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
@@ -105,6 +108,9 @@
     <Compile Include="Manufacturer.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Requests.xaml.cs">
+      <DependentUpon>Requests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
@@ -114,17 +120,17 @@
     <Compile Include="ProductSale.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductsPage.xaml.cs">
-      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    <Compile Include="Pages\Products.xaml.cs">
+      <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RequestForServicePage.xaml.cs">
-      <DependentUpon>RequestForServicePage.xaml</DependentUpon>
+    <Compile Include="Pages\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
       <DependentUpon>AutoService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ServicePage.xaml.cs">
-      <DependentUpon>ServicePage.xaml</DependentUpon>
+    <Compile Include="Pages\Services.xaml.cs">
+      <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionary.xaml">
       <SubType>Designer</SubType>
@@ -142,27 +148,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AddClientPage.xaml">
+    <Page Include="Pages\AddClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AddProductPage.xaml">
+    <Page Include="Pages\AddProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ClientsPage.xaml">
+    <Page Include="Pages\AddRequest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ProductsPage.xaml">
+    <Page Include="Pages\Clients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RequestForServicePage.xaml">
+    <Page Include="Pages\Products.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ServicePage.xaml">
+    <Page Include="Pages\AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Requests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Services.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

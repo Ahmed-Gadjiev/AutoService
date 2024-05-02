@@ -18,16 +18,16 @@ namespace AutoService.Pages
     /// <summary>
     /// Логика взаимодействия для RequestForServicePage.xaml
     /// </summary>
-    public partial class RequestForServicePage : Page
+    public partial class AddService : Page
     {
         private Service b;
 
-        public RequestForServicePage()
+        public AddService()
         {
             InitializeComponent();
         }
 
-        public RequestForServicePage(Service b)
+        public AddService(Service b)
         {
             InitializeComponent();
             this.b = b;

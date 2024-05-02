@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="581" Width="989">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -16,25 +16,17 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-        <Frame x:Name="MainFrame" Content="Frame" Grid.Column="1" Grid.Row="1"></Frame>
 
-        <Image Source="/Resources/service_logo.png" HorizontalAlignment="Left"></Image>
-        <TextBlock Grid.Column="1" Text="Автосервис" FontSize="30" HorizontalAlignment="Center"> </TextBlock>
+        <Frame x:Name="MainFrame"  Grid.Column="1" Grid.Row="1" Navigated="MainFrame_Navigated_1" ></Frame>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Height="30" Orientation="Horizontal">
-            <Button Name="BackButton" Click="BackButton_Click">Назад</Button>
-            <Button Name="CloseButton" Click="CloseButton_Click">Закрыть</Button>
-            
-        </StackPanel>
+        <Image Source="/Resources/service_logo.png" HorizontalAlignment="Left" Margin="9" ></Image>
+        <TextBlock Grid.Column="1" Text="Автосервис" FontSize="30" HorizontalAlignment="Center"></TextBlock>
 
         <StackPanel Grid.Row="1" Orientation="Vertical">
             <Button Name="ServicesButton" Click="ServicesButton_Click">Услуги</Button>
-            <Button Name="RequestOfService" Click="RequestOfService_Click">Заявка на услугу</Button>
             <Button Name="ProductsButton" Click="ProductsButton_Click">Товары</Button>
-            <Button Name="AddProductButton" Click="AddProductButton_Click">Добавить товар</Button>
             <Button Name="ClientsButton" Click="ClientsButton_Click">Клиенты</Button>
-            <Button Name="AddClientButton" Click="AddClientButton_Click">Добавить клиента</Button>
+            <Button Name="RequestsButton" Click="RequestsButton_Click">Заявки</Button>
         </StackPanel>
     </Grid>
 </Window>

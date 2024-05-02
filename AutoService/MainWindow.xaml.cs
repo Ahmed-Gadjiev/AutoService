@@ -21,7 +21,7 @@ namespace AutoService
 
         private void RequestOfService_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new RequestForServicePage());
+            MainFrame.Navigate(new AddService());
         }
 
         private void ProductsButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +43,10 @@ namespace AutoService
         {
             MainFrame.Navigate(new AddClientPage());
         }
+        private void RequestsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new RequestsPage());
+        }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -54,5 +58,14 @@ namespace AutoService
             Close();    
         }
 
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+        private void MainFrame_Navigated_1(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }
