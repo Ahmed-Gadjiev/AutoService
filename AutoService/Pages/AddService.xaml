@@ -9,6 +9,19 @@
       Title="RequestForServicePage">
 
     <Grid>
-        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <Label>Название</Label>
+                <TextBox Text="{Binding service.Title}"></TextBox>
+                <Label>Цена</Label>
+                <TextBox Text="{Binding service.Cost}"></TextBox>
+                <Label>Описание</Label>
+                <TextBox Text="{Binding service.Description}"></TextBox>
+                <Label>Длительность</Label>
+                <TextBox Text="{Binding service.DurationInSeconds}"></TextBox>
+
+                <Button Name="SaveButton" Click="SaveButton_Click">Сохранить</Button>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

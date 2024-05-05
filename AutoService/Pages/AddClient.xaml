@@ -18,7 +18,7 @@
                 <Label>Отчество</Label>
                 <TextBox Text="{Binding client.Patronymic}"></TextBox>
                 <Label>Дата регистрации</Label>
-                <DatePicker Name="dateRegistration"></DatePicker>
+                <DatePicker Name="dateRegistration" SelectedDate="{Binding client.RegistrationDate}"></DatePicker>
                 <Label>Дата рождения</Label>
                 <DatePicker Text="{Binding client.Birthday}"></DatePicker>
                 <Label>Почта</Label>
@@ -26,7 +26,7 @@
                 <Label>Телефон</Label>
                 <TextBox Text="{Binding client.Phone}"></TextBox>
                 <Label>Пол</Label>
-                <TextBox Text="{Binding client.Gender}"></TextBox>
+                <ComboBox SelectedValue="{Binding client.Gender}" IsEditable="True" Name="GenderCombobox"></ComboBox>
 
                 <Button Name="SaveButton" Click="SaveButton_Click">Сохранить</Button>
             </StackPanel>

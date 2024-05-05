@@ -12,7 +12,7 @@ namespace AutoService.Pages
     public partial class AddProductPage : Page
     {
         public Product product { get; set; }
-        
+
         public AddProductPage(Product product)
         {
             InitializeComponent();

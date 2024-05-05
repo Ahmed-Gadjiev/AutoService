@@ -16,28 +16,11 @@ namespace AutoService.Pages
     /// </summary>
     public partial class ClientsPage : Page
     {
-        private DbSet<Client> Clients { get; set; }
-        private AutoServiceEntities1 connection { get; set; }
-
         public ClientsPage()
         {
             InitializeComponent();
-            
-
-            //ClientGrid.ItemsSource = Clients.();
-            GetClientsAsync();
+            ClientGrid.ItemsSource = DB.Connection.Client.ToList();
         }
-
-        private async void GetClientsAsync()
-        {
-            ClientGrid.ItemsSource = await DB.Connection.Client.ToListAsync();
-        }
-
-        //private async void GetConnection()
-        //{
-        //    connection = await DB.Connection.Client.Async;
-        //}
-
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -55,22 +38,32 @@ namespace AutoService.Pages
                 {
                     var b = ClientGrid.SelectedItem as Client;
 
-                    Clients.Remove(b);
+                    DB.Connection.Client.Remove(b);
+
+                    foreach (var item in DB.Connection.ClientService.ToList())
+                    {
+                        if (item.ClientID.Equals(b.ID))
+                        {
+                            DB.Connection.ClientService.Remove(item);
+                        }
+                    }
+
                     DB.Connection.SaveChanges();
 
-                    ClientGrid.ItemsSource = Clients.ToList();
+                    ClientGrid.ItemsSource = DB.Connection.Client.ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
                 MessageBox.Show("Ошибка удаления из базы данных");
+                throw err;
             }
         }
 
         private void SortClients_Click(object sender, RoutedEventArgs e)
         {
             var _sort_type = (sender as RadioButton).Name;
-            var clients = Clients.ToList();
+            var clients = DB.Connection.Client.ToList();
 
             switch(_sort_type)
             {
